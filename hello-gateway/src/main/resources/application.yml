@@ -1,0 +1,26 @@
+#hello-gateway configuration
+server:
+  port: 8085
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      default-zone: http://localhost:8761/hello-eureka-service
+
+spring:  
+  cloud:
+    gateway:
+      routes:
+        - id: hello-consumer
+          uri: lb://hello-consumer          
+          predicates:
+            - Path=/helloc/**
+        - id: hello-producer
+          uri: lb://hello-producer          
+          predicates:
+            - Path=/hellop/**
+  application:
+     name: hello-gateway
+       
