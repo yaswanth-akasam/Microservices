@@ -1,0 +1,4 @@
+com\sapient\asde\feign\HelloFallback.class
+com\sapient\asde\controller\HelloController.class
+com\sapient\asde\feign\HelloService.class
+com\sapient\asde\app\HelloConsumerApplication.class
